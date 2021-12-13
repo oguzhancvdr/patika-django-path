@@ -36,7 +36,7 @@ def user_register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Account has been created')
-            return redirect('index')
+            return redirect('login')
     else:
         form = RegisterForm()
 
@@ -69,3 +69,8 @@ def enroll_the_course(request):
     return redirect('dashboard')
 
 
+def release_the_course(request):
+    course = Course.objects.get(id=request.POST['course_id'])
+    user = User.objects.get(id=request.POST['user_id'])
+    course.students.remove(user)
+    return redirect('dashboard')
