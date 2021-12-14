@@ -131,6 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 STATICFILES_DIRS = [str(BASE_DIR / 'static'),]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA FILES
 
