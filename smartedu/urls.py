@@ -26,6 +26,9 @@ urlpatterns = [
     path('courses/', include('courses.urls')),
     path('teachers/', include('teachers.urls')),
     path('accounts/', include('account.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'helpers.views.handle_not_found'
