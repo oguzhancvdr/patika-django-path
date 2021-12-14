@@ -1,3 +1,6 @@
+# Live version
+- [Home Page](https://smartedu-patika.herokuapp.com/)
+ 
 # Prerequisites
 - Python 3.9.1
 
