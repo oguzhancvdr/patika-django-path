@@ -43,3 +43,7 @@ class ContactView(SuccessMessageMixin, FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+
+def handle_not_found(request, exception):
+    return render(request, 'not-found.html')
