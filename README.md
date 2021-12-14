@@ -1,6 +1,6 @@
 # Prerequisites
 - Python 3.9.1
--
+
 # Installation
 
 ## 0. Clone the project
