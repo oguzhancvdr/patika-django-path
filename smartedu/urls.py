@@ -28,4 +28,4 @@ urlpatterns = [
     path('accounts/', include('account.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'pages.views.handle_not_found'
+handler404 = 'helpers.views.handle_not_found'
