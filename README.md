@@ -15,7 +15,6 @@ git clone https://github.com/oguzhancvdr/patika-django-path
 
 <details>
     <summary>.env</summary>
-
     DEBUG=True
     SECRET_KEY=secret_key
     ALLOWED_HOSTS=127.0.0.1,localhost
