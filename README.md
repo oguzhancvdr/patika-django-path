@@ -3,6 +3,8 @@
  
 # Prerequisites
 - Python 3.9.1
+- PostgreSQL 14.1
+- Docker Desktop 20.10.12
 
 # Installation
 
@@ -17,6 +19,7 @@ git clone https://github.com/oguzhancvdr/patika-django-path
     <summary>.env</summary>
     DEBUG=True
     SECRET_KEY=secret_key
+    DATABASE_URL=psql://db_user:db_password@db:5432/db_name
     ALLOWED_HOSTS=127.0.0.1,localhost
 </details>
 
@@ -33,19 +36,20 @@ python - c "from django.core.management.utils import get_random_secret_key; prin
 ## 2. Start the project.
 ```bash
 # create a virtual environment
-> python -m venv env
+python -m venv env
 
 # activate virtual environment
-> env/Scripts/activate
+env/Scripts/activate
 
-# install dependencies
-> cd smartedu_con
-> pip install -r requirements.txt
+# run docker container
+cd smartedu_con
+docker compose build
 
 # apply migrations
-> python manage.py migrate
+docker exec -ti smartedu_container /bin/bash
+python manage.py migrate
 
-# Run the app
-> python manage.py runserver
+# start project
+docker compose run app
 ```
 [Home Page](http://127.0.0.1:8000/)
