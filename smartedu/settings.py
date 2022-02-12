@@ -132,6 +132,9 @@ STATICFILES_DIRS = [str(BASE_DIR / 'static'),]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR / 'media')
 
+CELERY_BROKER_URL = "redis://redis:6379"
+RESULT_BACKEND = "redis://redis:6379"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
