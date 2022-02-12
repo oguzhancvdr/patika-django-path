@@ -9,4 +9,15 @@ services:
     image: app:smartedu
     container_name: smartedu_container
     command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes: 
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=smartedu
+      - POSTGRES_USER=smartedu
+      - POSTGRES_PASSWORD=smartedu
+    container_name: postgres_db
     
